@@ -1,0 +1,87 @@
+<!--JavaScript - Move Object with Arrow Keys using JavaScript Function.-->
+<html>
+    <head>
+        <title>Rick Astley Simulator</title>
+		  <link rel="stylesheet" href="style.css">
+		  <link rel="icon" href="https://i.ibb.co/q5NxbZg/226106-roll-256x256.png">
+		  
+		  
+		  <script type="text/javascript">
+		  
+		  
+            var Money = 0;
+				
+				
+				
+            var objImage = null;
+            function init() {
+                objImage = document.getElementById("image1");
+                objImage.style.position = "relative";
+                objImage.style.left = "0px";
+                objImage.style.top = "0px";
+            }
+            function getKeyAndMove(e) {
+                var key_code = e.which || e.keyCode;
+                switch (key_code) {
+                    case 37: 
+                        moveLeft();
+                        break;
+                    case 38: //Up arrow key
+                        moveUp();
+                        break;
+                    case 39: //right arrow key
+                        moveRight();
+                        break;
+                    case 40: //down arrow key
+                        moveDown();
+                        break;
+                }
+            }
+				
+            function moveLeft() {
+                objImage.style.left = parseInt(objImage.style.left) - 10 + "px";
+					 Money += 1;
+					  if(Money > 100) {
+					  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+					  }
+					 
+        document.getElementById("Money").innerHTML = Money;
+            }
+            function moveUp() {
+                objImage.style.top = parseInt(objImage.style.top) - 10 + "px";
+					 Money += 1;
+					  document.getElementById("Money").innerHTML = Money;
+					   if(Money > 100) {
+					  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+					  }
+            }
+            function moveRight() {
+                objImage.style.left = parseInt(objImage.style.left) + 10 + "px";
+					 Money += 1;
+					  document.getElementById("Money").innerHTML = Money;
+					   if(Money > 100) {
+					  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+					  }
+            }
+            function moveDown() {
+                objImage.style.top = parseInt(objImage.style.top) + 10 + "px";
+					 Money += 1;
+					  document.getElementById("Money").innerHTML = Money;
+					  if(Money > 100) {
+					  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+					  }
+            }
+            window.onload = init;
+        </script>
+    </head>
+
+    <body onkeydown="getKeyAndMove(event)">
+        <h1>Rick Astley Simulator</h1>
+		  
+		  <p><h1>Rick Rolls: <a id="Money">0</a></h1></p>
+		  
+		 
+       
+        <img id="image1" src="https://i.ibb.co/Jj2VjDG/61135525ad63f30019501966.png" alt="includehelp.com" />
+    </body>
+</html>
